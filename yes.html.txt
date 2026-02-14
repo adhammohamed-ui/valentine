@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>She Said Yes! ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff4d6d, #ff8fab);
+    color: white;
+    padding-top: 50px;
+}
+
+img {
+    width: 300px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.love-text {
+    font-size: 28px;
+    margin-top: 20px;
+    font-weight: bold;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px white, 0 0 20px pink;
+    }
+    to {
+        text-shadow: 0 0 20px red, 0 0 30px white;
+    }
+}
+
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: white;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Yaaaay! ❤️🥰</h1>
+<h2>You just made me the happiest man alive!</h2>
+
+<img src="photo.jpg" alt="Our Photo">
+
+<div class="love-text">Love U Shaqshoq ❤️</div>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "🤍";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
